@@ -1,0 +1,296 @@
+/* 
+=======================================
+
+Settings, Variables and Functions Setup
+
+=======================================
+*/
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+/* 
+============================================
+
+    Body, Navigation and Footer setup
+
+============================================
+*/
+header {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 6;
+  grid-column: 1 / span 6;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  display: block;
+  width: 100%;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  background-color: #009893;
+}
+
+body {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: min-content;
+      grid-template-rows: -webkit-min-content;
+      grid-template-rows: min-content;
+  -ms-grid-columns: (1fr)[6];
+      grid-template-columns: repeat(6, 1fr);
+  max-width: 100vw;
+  min-height: 100vh;
+  color: #ececec;
+  background-color: #ececec;
+  font-family: Quicksand;
+  letter-spacing: 2px;
+}
+
+#banner {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: max-content 1fr max-content;
+      grid-template-columns: -webkit-max-content 1fr -webkit-max-content;
+      grid-template-columns: max-content 1fr max-content;
+  width: 100%;
+}
+
+#banner #logo {
+  padding: 10px;
+  width: 50px;
+  height: 50px;
+}
+
+@media (min-width: 1080px) {
+  #banner #logo {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+#banner h1 {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  font-size: 18px;
+}
+
+@media (min-width: 1080px) {
+  #banner h1 {
+    font-size: 32px;
+  }
+}
+
+#banner #menu {
+  -ms-grid-column-align: end;
+      justify-self: end;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  -webkit-transition: 250ms;
+  transition: 250ms;
+  -webkit-filter: invert(100%) sepia(1%) saturate(656%) hue-rotate(318deg) brightness(114%) contrast(85%);
+          filter: invert(100%) sepia(1%) saturate(656%) hue-rotate(318deg) brightness(114%) contrast(85%);
+  cursor: pointer;
+}
+
+@media (min-width: 1080px) {
+  #banner #menu {
+    display: none;
+  }
+}
+
+#banner #menu.active {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.nav {
+  position: absolute;
+  z-index: 999;
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+  min-height: 90.5vh;
+  left: -100%;
+  background-color: #009893;
+  -webkit-transition: 250ms;
+  transition: 250ms;
+}
+
+@media (min-width: 750px) {
+  .nav {
+    width: 300px;
+  }
+}
+
+@media (min-width: 1080px) {
+  .nav {
+    position: relative;
+    left: 0;
+    height: auto;
+    min-height: -webkit-max-content;
+    min-height: -moz-max-content;
+    min-height: max-content;
+  }
+}
+
+.nav ul {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+@media (min-width: 1080px) {
+  .nav ul {
+    -ms-grid-column-align: center;
+        justify-self: center;
+    padding-bottom: 1rem;
+  }
+}
+
+.nav li {
+  margin-left: 1rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  list-style: none;
+}
+
+@media (min-width: 1080px) {
+  .nav li {
+    display: inline;
+  }
+}
+
+.nav a {
+  font-size: 32px;
+  color: #ececec;
+  text-decoration: none;
+}
+
+@media (min-width: 1080px) {
+  .nav a {
+    font-size: 24px;
+  }
+}
+
+.nav.active {
+  left: 0;
+}
+
+footer {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 6;
+  grid-column: 1 / span 6;
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  background-color: #009893;
+}
+
+@media (min-width: 1080px) {
+  footer {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+footer .card {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  margin: 2rem;
+  width: 360px;
+  overflow: wrap;
+}
+
+footer .card h1 {
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 32px;
+}
+
+footer .card p {
+  text-align: center;
+  font-size: 18px;
+}
+
+footer .card a {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  color: #ececec;
+  text-decoration: none;
+}
+
+@media (min-width: 750px) {
+  footer .card {
+    width: 450px;
+  }
+}
+
+@media (min-width: 1080px) {
+  footer .card {
+    width: auto;
+  }
+}
+
+/* 
+============================================
+
+            Main Page Content
+
+============================================
+*/
+section {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 4;
+  grid-column: 2 / span 4;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  margin: 2rem 0;
+  max-width: 600px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  color: #494949;
+}
+
+section h1 {
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 32px;
+}
+
+section p {
+  font-size: 18px;
+}
+
+section img {
+  margin: 1.5rem 0;
+  width: 100%;
+}
+/*# sourceMappingURL=styles.css.map */
