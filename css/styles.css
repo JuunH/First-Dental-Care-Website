@@ -19,6 +19,7 @@ Settings, Variables and Functions Setup
 
 ============================================
 */
+/* Header / Banner */
 header {
   -ms-grid-column: 1;
   -ms-grid-column-span: 6;
@@ -118,6 +119,7 @@ header {
           transform: rotate(180deg);
 }
 
+/* Navigation Bar */
 .nav {
   position: absolute;
   z-index: 999;
@@ -206,6 +208,7 @@ header {
   left: 0;
 }
 
+/* Body */
 body {
   position: relative;
   display: -ms-grid;
@@ -233,6 +236,7 @@ main {
       grid-template-columns: repeat(6, 1fr);
 }
 
+/* Footer */
 footer {
   -ms-grid-column: 1;
   -ms-grid-column-span: 6;
@@ -328,9 +332,6 @@ footer .card a {
 
 .mainContent p {
   font-size: 18px;
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
   word-break: break-all;
 }
 
@@ -428,10 +429,40 @@ footer .card a {
 
 @media (min-width: 1080px) {
   .sideBar {
-    display: -ms-grid;
-    display: grid;
+    display: block;
     -ms-grid-column-align: center;
         justify-self: center;
   }
+}
+
+#openTimes {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: max-content;
+      grid-template-rows: -webkit-max-content;
+      grid-template-rows: max-content;
+  margin: 1rem;
+}
+
+#openTimes li {
+  height: 4rem;
+  list-style: none;
+  text-align: center;
+  font-weight: 600;
+}
+
+@media (min-width: 750px) {
+  #openTimes li {
+    height: auto;
+    text-align: left;
+  }
+}
+
+/* Set the size of the div element that contains the map */
+#map {
+  height: 100%;
+  width: 100%;
 }
 /*# sourceMappingURL=styles.css.map */

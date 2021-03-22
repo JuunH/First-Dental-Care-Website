@@ -68,6 +68,9 @@ $fonts: (
 */
 
 
+/* Header / Banner */
+
+
 header {
     grid-column: 1 / span 6;
     position: sticky;
@@ -127,6 +130,9 @@ header {
         }
     }
 }
+
+
+/* Navigation Bar */
 
 
 .nav {
@@ -192,6 +198,9 @@ header {
 }
 
 
+/* Body */
+
+
 body {
     position: relative;
     display: grid;
@@ -210,6 +219,9 @@ main {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
 }
+
+
+/* Footer */
 
 
 footer {
@@ -287,7 +299,6 @@ footer {
     }
     p {
         font-size: ff(1);
-        hyphens: auto;
         word-break: break-all;
     }
     img {
@@ -358,7 +369,31 @@ footer {
         }
     }
     @include desktop() {
-        display: grid;
+        display: block;
         justify-self: center;
     }
 }
+
+#openTimes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: max-content;
+    margin: 1rem;
+    li {
+        height: 4rem;
+        list-style: none;
+        text-align: center;
+        font-weight: 600;
+        @include tablet() {
+            height: auto;
+            text-align: left;
+        }
+    }
+}
+
+/* Set the size of the div element that contains the map */
+#map {
+    height: 100%;
+    width: 100%;
+}
+  
