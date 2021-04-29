@@ -1,0 +1,18 @@
+$lightmode: (
+    primary: white,
+);
+
+
+$darkmode: (
+    primary: black,
+);
+
+
+@function lm($color-name) {
+    @return map-get($lightmode, $color-name);
+}
+
+
+@function dm($color-name) {
+    @return map-get($darkmode, $color-name);
+}
